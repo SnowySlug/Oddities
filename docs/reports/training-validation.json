@@ -1,0 +1,34 @@
+{
+  "source_rows": 1255,
+  "reference_completed_games": 1319,
+  "matched_source_games": 1253,
+  "accepted_research_rows": 1253,
+  "quarantined_rows": 2,
+  "reason_counts": {
+    "no_exact_reference_match": 2
+  },
+  "source_date_min": "2023-10-24",
+  "source_date_max": "2024-04-28",
+  "missing_reference_games": 66,
+  "missing_within_source_date_span": 14,
+  "missing_after_source_date_span": 52,
+  "missing_before_source_date_span": 0,
+  "accepted_date_min": "2023-10-24",
+  "accepted_date_max": "2024-04-28",
+  "limitations": [
+    "Exact date/home/away matching only; no fuzzy identity or date repair.",
+    "Source date is interpreted as America/New_York game date for this comparison.",
+    "Coverage is relative to collected completed ESPN regular/playoff/play-in events, not certified league completeness.",
+    "Prices were checked for numerical plausibility only, not independently verified.",
+    "Unknown sportsbook, quote timing and settlement rules prohibit executable historical-price claims.",
+    "Accepted denotes structural/result checks only, not permission for product use."
+  ],
+  "source_table": "2023-24",
+  "source_sha256": "4a803d41cd4597c1d898c0b131a58763dee8b64140be8f40c29b73c852e162d9",
+  "reference_response_count": 90,
+  "reference_ignored": {
+    "not_completed": 4
+  },
+  "reference_manifest_sha256": "30c229ce9de9220763dc7bff4d7467740039af9fef97af729b274e2b3e9f0823",
+  "training_note": "Baseline uses all completed reference results, not the partial odds table."
+}

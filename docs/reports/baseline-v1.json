@@ -1,0 +1,373 @@
+{
+  "experiment": "baseline-v1",
+  "created_at": "2026-10-08T15:07:49.885839+00:00",
+  "code_commit": "d9953832c6d85024567cecb256bd20f346b10950",
+  "model_version": "daily-elo-v1",
+  "config": {
+    "initial": 1500.0,
+    "scale": 400.0,
+    "k": 20.0,
+    "home_advantage": 65.0,
+    "offseason_retention": 0.75
+  },
+  "protocol_sha256": "7041e9307db13fdd633617411ae57e75aa32f111623c7e12c0e33661c81fd185",
+  "training": {
+    "season": "2023-24",
+    "games": 1319,
+    "home_win_rate": 0.5473843821076573,
+    "start": "2023-10-24",
+    "end": "2024-06-17",
+    "ignored_reference_copies": {
+      "not_completed": 4
+    }
+  },
+  "development": {
+    "season": "2024-25",
+    "reference_games": 1321,
+    "evaluated_games": 1319,
+    "excluded_games": 2,
+    "start": "2024-10-22",
+    "end": "2025-06-22",
+    "ignored_reference_copies": {
+      "not_completed": 10
+    }
+  },
+  "metrics": {
+    "coin_flip": {
+      "n": 1319,
+      "log_loss": 0.6931471805599453,
+      "brier_score": 0.25,
+      "accuracy": 0.5443517816527672,
+      "home_win_rate": 0.5443517816527672,
+      "calibration": [
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "count": 1319,
+          "mean_probability": 0.5,
+          "observed_home_win_rate": 0.5443517816527672,
+          "observed_rate_wilson95": [
+            0.5173847574257256,
+            0.5710612156119691
+          ]
+        }
+      ]
+    },
+    "training_home_rate": {
+      "n": 1319,
+      "log_loss": 0.6892263969371758,
+      "brier_score": 0.24804211612974428,
+      "accuracy": 0.5443517816527672,
+      "home_win_rate": 0.5443517816527672,
+      "calibration": [
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "count": 1319,
+          "mean_probability": 0.5473843821076573,
+          "observed_home_win_rate": 0.5443517816527672,
+          "observed_rate_wilson95": [
+            0.5173847574257256,
+            0.5710612156119691
+          ]
+        }
+      ]
+    },
+    "elo": {
+      "n": 1319,
+      "log_loss": 0.6189493319384594,
+      "brier_score": 0.2155444941598351,
+      "accuracy": 0.6504927975739196,
+      "home_win_rate": 0.5443517816527672,
+      "calibration": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 1,
+          "mean_probability": 0.08862579307477855,
+          "observed_home_win_rate": 0.0,
+          "observed_rate_wilson95": [
+            0,
+            0.7934506856227626
+          ]
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 19,
+          "mean_probability": 0.1555939866488299,
+          "observed_home_win_rate": 0.05263157894736842,
+          "observed_rate_wilson95": [
+            0.009351994062300362,
+            0.24638731166898786
+          ]
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "count": 77,
+          "mean_probability": 0.25824429769081286,
+          "observed_home_win_rate": 0.22077922077922077,
+          "observed_rate_wilson95": [
+            0.14266403041098702,
+            0.32543067461686576
+          ]
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "count": 149,
+          "mean_probability": 0.3503110344963432,
+          "observed_home_win_rate": 0.3624161073825503,
+          "observed_rate_wilson95": [
+            0.28958778804895696,
+            0.4421603886803745
+          ]
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 180,
+          "mean_probability": 0.45539304678549575,
+          "observed_home_win_rate": 0.39444444444444443,
+          "observed_rate_wilson95": [
+            0.32596824258285667,
+            0.46733191808948377
+          ]
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "count": 236,
+          "mean_probability": 0.5514313715088843,
+          "observed_home_win_rate": 0.4872881355932203,
+          "observed_rate_wilson95": [
+            0.4242333938118339,
+            0.5507500805653561
+          ]
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "count": 279,
+          "mean_probability": 0.6468802659423324,
+          "observed_home_win_rate": 0.6164874551971327,
+          "observed_rate_wilson95": [
+            0.5582165091686179,
+            0.6715942133153389
+          ]
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "count": 222,
+          "mean_probability": 0.7492121877119015,
+          "observed_home_win_rate": 0.6936936936936937,
+          "observed_rate_wilson95": [
+            0.6301903492757839,
+            0.7506077577196166
+          ]
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 133,
+          "mean_probability": 0.8392522222247193,
+          "observed_home_win_rate": 0.849624060150376,
+          "observed_rate_wilson95": [
+            0.7791221049896448,
+            0.9004964901457637
+          ]
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 23,
+          "mean_probability": 0.9185030175182411,
+          "observed_home_win_rate": 0.9130434782608695,
+          "observed_rate_wilson95": [
+            0.7320401892425634,
+            0.9758199955157796
+          ]
+        }
+      ]
+    },
+    "market": {
+      "n": 1319,
+      "log_loss": 0.5862381341123268,
+      "brier_score": 0.20133232619330863,
+      "accuracy": 0.6914329037149356,
+      "home_win_rate": 0.5443517816527672,
+      "calibration": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 7,
+          "mean_probability": 0.09342774359715508,
+          "observed_home_win_rate": 0.0,
+          "observed_rate_wilson95": [
+            5.551115123125783e-17,
+            0.35433043506668743
+          ]
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 73,
+          "mean_probability": 0.15326862190019225,
+          "observed_home_win_rate": 0.0547945205479452,
+          "observed_rate_wilson95": [
+            0.02151249741569728,
+            0.1325899754215975
+          ]
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "count": 113,
+          "mean_probability": 0.25503860625487745,
+          "observed_home_win_rate": 0.2920353982300885,
+          "observed_rate_wilson95": [
+            0.21614306195264466,
+            0.3816024602756717
+          ]
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "count": 181,
+          "mean_probability": 0.3497672310378104,
+          "observed_home_win_rate": 0.3756906077348066,
+          "observed_rate_wilson95": [
+            0.3084089078155917,
+            0.448139215710893
+          ]
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 156,
+          "mean_probability": 0.44776729797384035,
+          "observed_home_win_rate": 0.40384615384615385,
+          "observed_rate_wilson95": [
+            0.33005592876330575,
+            0.48225809651312007
+          ]
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "count": 177,
+          "mean_probability": 0.5549475408202496,
+          "observed_home_win_rate": 0.5988700564971752,
+          "observed_rate_wilson95": [
+            0.5253044912629219,
+            0.6682351994044864
+          ]
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "count": 216,
+          "mean_probability": 0.6527559291088912,
+          "observed_home_win_rate": 0.5925925925925926,
+          "observed_rate_wilson95": [
+            0.5260034995337115,
+            0.655945802543221
+          ]
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "count": 195,
+          "mean_probability": 0.7450548788999874,
+          "observed_home_win_rate": 0.7384615384615385,
+          "observed_rate_wilson95": [
+            0.6725973321957883,
+            0.7951119702382832
+          ]
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 178,
+          "mean_probability": 0.843959993248288,
+          "observed_home_win_rate": 0.8426966292134831,
+          "observed_rate_wilson95": [
+            0.7820457903543131,
+            0.8888683168642108
+          ]
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 23,
+          "mean_probability": 0.9191075354937375,
+          "observed_home_win_rate": 0.9565217391304348,
+          "observed_rate_wilson95": [
+            0.7900884492974114,
+            0.9922833338565469
+          ]
+        }
+      ]
+    }
+  },
+  "comparisons": [
+    {
+      "comparison": "elo minus market",
+      "negative_favors": "elo",
+      "draws": 2000,
+      "seed": 20261008,
+      "day_clusters": 214,
+      "log_loss": {
+        "difference": 0.0327111978261326,
+        "percentile95": [
+          0.02060527631746424,
+          0.044940994608582294
+        ]
+      },
+      "brier_score": {
+        "difference": 0.014212167966526443,
+        "percentile95": [
+          0.008704666976032447,
+          0.019625972246936116
+        ]
+      }
+    },
+    {
+      "comparison": "elo minus training_home_rate",
+      "negative_favors": "elo",
+      "draws": 2000,
+      "seed": 20261008,
+      "day_clusters": 214,
+      "log_loss": {
+        "difference": -0.07027706499871642,
+        "percentile95": [
+          -0.08943950646010672,
+          -0.049623415775862434
+        ]
+      },
+      "brier_score": {
+        "difference": -0.03249762196990918,
+        "percentile95": [
+          -0.040902062602523194,
+          -0.023614698522222758
+        ]
+      }
+    }
+  ],
+  "inputs": {
+    "games.jsonl": "bd455ef6c73319de5834383f1cd52b5cb9df9ecf6f3ba08c72dbe4ac10dbde62",
+    "quotes.jsonl": "990c9616544f865e4263b3fe4445c67b8a9793a752287e869a53f441390a59b4"
+  },
+  "reference_manifest_sha256": "8efdf2f92095cf3a0acc318aa8f98c860ea17b9d0b29db80504b6f7225d2935d",
+  "holdout": "2025-26 not loaded or scored by this runner",
+  "limitations": [
+    "Development evaluation only; fixed parameters, no optimization or final holdout evaluation.",
+    "Market probabilities use timing-unverified quotes and may have an information advantage.",
+    "No price verification, ROI calculation or executable betting backtest.",
+    "Daily bootstrap intervals omit some serial dependence across dates.",
+    "Current result snapshots may include retrospective score corrections.",
+    "Data reuse rights are unresolved; this is local exploratory research."
+  ]
+}
