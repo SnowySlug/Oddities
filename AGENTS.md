@@ -3,7 +3,7 @@
 ## Product and scope
 - $0 proof of concept: NBA pregame moneylines, probability research, odds comparison, paper tracking.
 - Repository is intentionally public. No paid services or subscriptions have been authorized.
-- Current milestone is the research foundation. Do not describe it as a working live app.
+- Current milestone includes an experimental Elo baseline. Do not describe it as a working live app.
 - Consult docs/PLAN.md and docs/DATA_SOURCES.md before expanding scope.
 
 ## Development
@@ -30,4 +30,6 @@
 
 ## Continuity
 - Record completed work and concrete remaining blockers in docs/PLAN.md.
+- Keep docs/BASELINE_PROTOCOL.md and the baseline-v1 result immutable as experiment history.
+  New model configurations belong in separately named experiment protocols and result files.
 - Keep reports reproducible from documented commands. No raw-data redistribution by default.

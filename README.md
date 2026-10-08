@@ -2,7 +2,7 @@
 
 Sports probability research and odds comparison, starting with NBA pregame moneylines.
 
-**Status: research foundation.** No trained model, live feed or web app yet. Current development
+**Status: experimental baseline and data validation.** No live feed or web app yet. Current development
 requires no paid services or API key. The core uses Python's standard library;
 date reconciliation also requires an IANA timezone database (see Windows note below).
 
@@ -51,11 +51,28 @@ not a prediction or a betting recommendation.
 
 ## Data and next steps
 
+The first chronological Elo baseline achieved 65.05% accuracy on 1,319 development games,
+versus 69.14% for the timing-unverified market reference. The market also had better
+log loss and Brier scores. These are retrospective research results, not profit claims.
+See [the complete baseline findings](docs/BASELINE_RESULTS.md).
+
+After collecting 2023-24 reference results as well, reproduce the fixed experiment:
+
+```sh
+python scripts/fetch_reference.py --seasons 2024
+python scripts/run_baseline.py --reference data/raw/espn --validated data/processed/run-001/2024-25 --output artifacts/baseline-v1
+```
+
+The runner requires a clean, committed checkout and a new output directory. It uses only
+2023-24 training and 2024-25 development data. Full run instructions and parameters are
+in [the frozen protocol](docs/BASELINE_PROTOCOL.md).
+
 See [data sources and findings](docs/DATA_SOURCES.md), [development plan](docs/PLAN.md),
 and [engineering instructions](AGENTS.md).
 
 The older archive has data-quality issues. A newer database includes 2024-25 and partial 2025-26
-records, but still requires verification of coverage, provenance and permitted use. Neither source
-has been approved for training or treated as proof of executable historical prices.
+records. Game-result validation is implemented; quote provenance, permissions and the later
+2026 odds gap remain unresolved. These exploratory data are not approved for distributed
+product use and do not establish executable historical prices.
 
 Raw data, credentials and model binaries stay out of Git. No open-source license has been selected.

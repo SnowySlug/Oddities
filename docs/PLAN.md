@@ -27,14 +27,27 @@ with sportsbook market estimates and available prices. No automatic wagering.
 - 18 local tests pass, including an end-to-end importer test and reference hash-tampering test.
 - Aggregate report: docs/reports/recent-validation.json. No raw datasets redistributed.
 
-## Next milestone: baseline research
+## Completed baseline research (2026-10-08)
+- Froze docs/BASELINE_PROTOCOL.md before evaluating any model: 2023-24 warm-up,
+  2024-25 development, 2025-26 holdout remains unscored.
+- Collected 90 older reference responses and validated the 2023-24 source table:
+  1,253 matched rows, two quarantines, 66 missing reference games. Used all 1,319
+  completed reference games to warm up Elo; historical odds are not training inputs.
+- Implemented daily-batched Elo with fixed settings, constant probability baselines,
+  calibration, log loss, Brier score and paired day-cluster bootstrap intervals.
+- On 1,319 development games, Elo accuracy 65.05%, log loss 0.61895, Brier 0.21554.
+  Market reference: 69.14%, 0.58624, 0.20133. Elo does not beat this market benchmark.
+- Reproduced predictions exactly at the published implementation commit. 26 tests passed.
+- Full interpretation in docs/BASELINE_RESULTS.md; aggregate report in docs/reports/baseline-v1.json.
+
+## Next milestone: features and application foundation
 1. Establish permitted dataset use before integrating these third-party odds in a distributed product.
 2. Independently verify price samples and identify a source for the missing 2026 odds; do not
    reconstruct historical prices from final results or fill gaps with invented values.
-3. Expand independent result validation to older training seasons. Resolve aliases explicitly.
-4. Freeze the research protocol and data inclusion manifest before tuning any model.
-5. Build chronological baseline models using verified past results. Unknown quote times prevent
-   executable betting backtests; retrospective probability comparisons remain a separate exercise.
+3. Define a new experiment with historically available lagged strength, rest and performance
+   features; compare a regularized model with the fixed baseline, preserving the holdout.
+4. Build a local research API and UI that clearly displays experimental probabilities,
+   source freshness and validation status. Live prices require a separate adapter.
 
 ## Research milestone
 - Pre-register time splits after establishing trustworthy coverage. Preserve the latest usable
@@ -55,5 +68,6 @@ with sportsbook market estimates and available prices. No automatic wagering.
 - Load and reliability tests, outage handling, accessibility and independent review before public beta.
 
 ## Not implemented
-Trained predictions, live feed, user interface, accounts, alerts, billing, deployment and execution.
-No accuracy or profitability claims. No subscription purchased. Research data remains local.
+Production model, live feed, user interface, accounts, alerts, billing, deployment and execution.
+No profitability claims. Experimental development metrics are recorded above. No subscription
+purchased. Raw data and per-game predictions remain local and Git-ignored.
