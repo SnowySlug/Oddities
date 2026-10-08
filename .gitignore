@@ -218,3 +218,21 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Oddities: credentials, local data, frontend output, model artifacts
+.env.*
+!.env.example
+data/raw/
+data/processed/
+artifacts/
+*.sqlite
+*.sqlite3
+*.db
+*.pkl
+*.joblib
+node_modules/
+.next/
+.npm/
+coverage/
+playwright-report/
+test-results/
