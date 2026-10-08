@@ -7,7 +7,8 @@
 - Consult docs/PLAN.md and docs/DATA_SOURCES.md before expanding scope.
 
 ## Development
-- Python 3.11+; current core uses only the standard library.
+- Python 3.11+; current core uses the standard library. Date reconciliation requires
+  IANA timezone data; install `tzdata` where the operating system does not supply it.
 - Verify with `python -m unittest discover -s tests -v` and `python -m oddities demo`.
 - Keep mathematical calculations independent of data providers and user interfaces.
 - Make changes on focused branches. Do not merge or deploy without instruction.

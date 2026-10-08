@@ -2,10 +2,12 @@
 
 import argparse
 import json
+import sqlite3
 from pathlib import Path
 
 from .audit import audit_file
 from .odds import expected_return, implied_probability, proportional_devig
+from .normalize import normalize_database
 
 
 def main() -> None:
@@ -15,6 +17,10 @@ def main() -> None:
     audit = commands.add_parser("audit", help="Inspect an existing SBR NBA JSON file")
     audit.add_argument("path", type=Path)
     audit.add_argument("--output", type=Path)
+    normalize = commands.add_parser("normalize", help="Reconcile recent NBA odds with cached ESPN results")
+    normalize.add_argument("database", type=Path)
+    normalize.add_argument("reference", type=Path)
+    normalize.add_argument("output", type=Path)
     args = parser.parse_args()
     if args.command == "demo":
         result = {
@@ -26,6 +32,11 @@ def main() -> None:
             "example_same_book_devig_probabilities": proportional_devig(-120, 100),
             "devig_method": "proportional normalization",
         }
+    elif args.command == "normalize":
+        try:
+            result = normalize_database(args.database, args.reference, args.output)
+        except (OSError, ValueError, sqlite3.Error) as exc:
+            parser.error(str(exc))
     else:
         try:
             result = audit_file(args.path)
