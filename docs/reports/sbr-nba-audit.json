@@ -1,0 +1,180 @@
+{
+  "sha256": "0c9858489d224c54dcf2f2d1b70c3a122675381d35ae03ce0a81204f739f0e98",
+  "rows": 13903,
+  "date_min": "2011-12-25",
+  "date_max": "2022-06-13",
+  "season_counts": {
+    "2011": 1074,
+    "2012": 1314,
+    "2013": 1319,
+    "2014": 1311,
+    "2015": 1316,
+    "2016": 1309,
+    "2017": 1312,
+    "2018": 1312,
+    "2019": 1143,
+    "2020": 1171,
+    "2021": 1322
+  },
+  "duplicate_game_keys": 0,
+  "fields": [
+    "2H_total",
+    "away_1stQtr",
+    "away_2H_spread",
+    "away_2ndQtr",
+    "away_3rdQtr",
+    "away_4thQtr",
+    "away_close_ml",
+    "away_close_spread",
+    "away_final",
+    "away_open_spread",
+    "away_team",
+    "close_over_under",
+    "date",
+    "home_1stQtr",
+    "home_2H_spread",
+    "home_2ndQtr",
+    "home_3rdQtr",
+    "home_4thQtr",
+    "home_close_ml",
+    "home_close_spread",
+    "home_final",
+    "home_open_spread",
+    "home_team",
+    "open_over_under",
+    "season"
+  ],
+  "findings": {
+    "close_over_under_review": {
+      "count": 936,
+      "first_row_indices": [
+        6,
+        30,
+        33,
+        48,
+        93,
+        102,
+        106,
+        161,
+        183,
+        229
+      ]
+    },
+    "home_2H_spread_review": {
+      "count": 3432,
+      "first_row_indices": [
+        0,
+        1,
+        5,
+        17,
+        19,
+        21,
+        27,
+        33,
+        37,
+        38
+      ]
+    },
+    "home_close_spread_review": {
+      "count": 933,
+      "first_row_indices": [
+        6,
+        30,
+        33,
+        48,
+        93,
+        102,
+        106,
+        161,
+        183,
+        229
+      ]
+    },
+    "home_open_spread_review": {
+      "count": 2,
+      "first_row_indices": [
+        10609,
+        10616
+      ]
+    },
+    "invalid_final_score": {
+      "count": 11,
+      "first_row_indices": [
+        1073,
+        1491,
+        2387,
+        3706,
+        5017,
+        6333,
+        7642,
+        8954,
+        10266,
+        11409
+      ]
+    },
+    "invalid_moneyline": {
+      "count": 11,
+      "first_row_indices": [
+        1073,
+        1768,
+        2387,
+        3706,
+        5017,
+        6333,
+        7642,
+        8954,
+        10266,
+        11409
+      ]
+    },
+    "invalid_team_pair": {
+      "count": 10,
+      "first_row_indices": [
+        1073,
+        2387,
+        3706,
+        5017,
+        6333,
+        7642,
+        8954,
+        10266,
+        11409,
+        12580
+      ]
+    },
+    "moneyline_overround_review": {
+      "count": 7,
+      "first_row_indices": [
+        1319,
+        1414,
+        1503,
+        1545,
+        2041,
+        2154,
+        3014
+      ]
+    },
+    "open_over_under_review": {
+      "count": 16,
+      "first_row_indices": [
+        1930,
+        4485,
+        5017,
+        6506,
+        8954,
+        10609,
+        10616,
+        11409,
+        11994,
+        12012
+      ]
+    }
+  },
+  "limitations": [
+    "Row indices are zero-based. Threshold failures require review, not automatic repair.",
+    "No external schedule, team identity or score verification performed.",
+    "No bookmaker identity, quote timestamp or executable-price evidence in this schema.",
+    "Closing moneylines must not be represented as earlier available prices.",
+    "Passing these checks does not certify a record as accurate or usable."
+  ]
+}

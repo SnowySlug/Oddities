@@ -1,0 +1,96 @@
+{
+  "source_commit": "8e36b0b72ecc5082aa8976dff742cdf910b3aa36",
+  "sha256": "4a803d41cd4597c1d898c0b131a58763dee8b64140be8f40c29b73c852e162d9",
+  "tables": {
+    "odds_2022-23_new": {
+      "rows": 1319,
+      "date_min": "2022-10-19",
+      "date_max": "2023-06-12",
+      "duplicate_game_keys": 0,
+      "findings": {
+        "score_review": 1
+      },
+      "columns": [
+        "Date",
+        "Home",
+        "Away",
+        "OU",
+        "Spread",
+        "ML_Home",
+        "ML_Away",
+        "Points",
+        "Win_Margin",
+        "Days_Rest_Home",
+        "Days_Rest_Away"
+      ]
+    },
+    "2023-24": {
+      "rows": 1255,
+      "date_min": "2023-10-24",
+      "date_max": "2024-04-28",
+      "duplicate_game_keys": 0,
+      "findings": {},
+      "columns": [
+        "Date",
+        "Home",
+        "Away",
+        "OU",
+        "Spread",
+        "ML_Home",
+        "ML_Away",
+        "Points",
+        "Win_Margin",
+        "Days_Rest_Home",
+        "Days_Rest_Away"
+      ]
+    },
+    "2024-25": {
+      "rows": 1326,
+      "date_min": "2024-10-22",
+      "date_max": "2025-06-22",
+      "duplicate_game_keys": 0,
+      "findings": {
+        "score_review": 5
+      },
+      "columns": [
+        "Date",
+        "Home",
+        "Away",
+        "OU",
+        "Spread",
+        "ML_Home",
+        "ML_Away",
+        "Points",
+        "Win_Margin",
+        "Days_Rest_Home",
+        "Days_Rest_Away"
+      ]
+    },
+    "odds_2025-26": {
+      "rows": 554,
+      "date_min": "2025-10-21",
+      "date_max": "2026-01-07",
+      "duplicate_game_keys": 0,
+      "findings": {},
+      "columns": [
+        "Date",
+        "Home",
+        "Away",
+        "OU",
+        "Spread",
+        "ML_Home",
+        "ML_Away",
+        "Points",
+        "Win_Margin",
+        "Days_Rest_Home",
+        "Days_Rest_Away"
+      ]
+    }
+  },
+  "limitations": [
+    "Partial schema and plausibility checks only; not a completeness or accuracy certification.",
+    "Tables overlap; never concatenate all database tables.",
+    "No quote timestamp or bookmaker column in inspected tables.",
+    "Source provenance and reuse permissions need review before product integration."
+  ]
+}
