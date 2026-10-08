@@ -1,0 +1,72 @@
+{
+  "2024-25": {
+    "source_rows": 1326,
+    "reference_completed_games": 1321,
+    "matched_source_games": 1321,
+    "accepted_research_rows": 1319,
+    "quarantined_rows": 7,
+    "reason_counts": {
+      "reference_score_mismatch": 2,
+      "no_exact_reference_match": 5,
+      "invalid_final_score": 5
+    },
+    "source_date_min": "2024-10-22",
+    "source_date_max": "2025-06-22",
+    "missing_reference_games": 0,
+    "missing_within_source_date_span": 0,
+    "missing_after_source_date_span": 0,
+    "missing_before_source_date_span": 0,
+    "accepted_date_min": "2024-10-22",
+    "accepted_date_max": "2025-06-22",
+    "limitations": [
+      "Exact date/home/away matching only; no fuzzy identity or date repair.",
+      "Source date is interpreted as America/New_York game date for this comparison.",
+      "Coverage is relative to collected completed ESPN regular/playoff/play-in events, not certified league completeness.",
+      "Prices were checked for numerical plausibility only, not independently verified.",
+      "Unknown sportsbook, quote timing and settlement rules prohibit executable historical-price claims.",
+      "Accepted denotes structural/result checks only, not permission for product use."
+    ],
+    "source_table": "2024-25",
+    "source_sha256": "4a803d41cd4597c1d898c0b131a58763dee8b64140be8f40c29b73c852e162d9",
+    "reference_ignored": {
+      "not_completed": 10
+    },
+    "reference_response_count": 90,
+    "reference_manifest_sha256": "378478a98ba977889747f74bd62e26f7eda58d4edba9e59cd7cbb1a10de38dab",
+    "reference_retrieved_min": "2026-10-08T10:02:35.324818+00:00",
+    "reference_retrieved_max": "2026-10-08T10:52:57.269089+00:00"
+  },
+  "odds_2025-26": {
+    "source_rows": 554,
+    "reference_completed_games": 1322,
+    "matched_source_games": 554,
+    "accepted_research_rows": 554,
+    "quarantined_rows": 0,
+    "reason_counts": {},
+    "source_date_min": "2025-10-21",
+    "source_date_max": "2026-01-07",
+    "missing_reference_games": 768,
+    "missing_within_source_date_span": 0,
+    "missing_after_source_date_span": 768,
+    "missing_before_source_date_span": 0,
+    "accepted_date_min": "2025-10-21",
+    "accepted_date_max": "2026-01-07",
+    "limitations": [
+      "Exact date/home/away matching only; no fuzzy identity or date repair.",
+      "Source date is interpreted as America/New_York game date for this comparison.",
+      "Coverage is relative to collected completed ESPN regular/playoff/play-in events, not certified league completeness.",
+      "Prices were checked for numerical plausibility only, not independently verified.",
+      "Unknown sportsbook, quote timing and settlement rules prohibit executable historical-price claims.",
+      "Accepted denotes structural/result checks only, not permission for product use."
+    ],
+    "source_table": "odds_2025-26",
+    "source_sha256": "4a803d41cd4597c1d898c0b131a58763dee8b64140be8f40c29b73c852e162d9",
+    "reference_ignored": {
+      "not_completed": 8
+    },
+    "reference_response_count": 90,
+    "reference_manifest_sha256": "ced7e6759649d6b1cb26ac745521f50b1ae75a39bb6ebc3c3f922c7dbc68d36b",
+    "reference_retrieved_min": "2026-10-08T10:04:36.047695+00:00",
+    "reference_retrieved_max": "2026-10-08T10:53:59.960200+00:00"
+  }
+}

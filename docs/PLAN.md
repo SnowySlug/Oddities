@@ -12,13 +12,29 @@ with sportsbook market estimates and available prices. No automatic wagering.
 - Eight unit tests covering known prices, invariants, invalid inputs and audit behavior.
 - Data source register, development instructions, secret/data ignores, CI configuration.
 
-## Next milestone: usable data
-1. Prefer recent games: audit 2024-25 and partial 2025-26 first, then older seasons for training.
-2. Establish provenance, timing semantics and permitted use for the newer database.
-3. Compare coverage against an independent schedule; verify samples of scores and prices.
-4. Normalize stable game/team identities; handle relocations, aliases and neutral sites explicitly.
-5. Create a canonical game table and separate quote table with nullable unknown timestamps.
-6. Produce a quarantine file with a reason per rejected record and an inclusion manifest.
+## Completed recent-data validation (2026-10-08)
+- Inspected upstream collection code; current defaults do not establish per-row bookmaker or timing.
+- Collected and hashed 180 ESPN schedule responses across 30 teams, two seasons and three categories
+  (regular, playoff, play-in). Cached outside Git with source URLs and retrieval times.
+- Compared every source row in 2024-25 and partial 2025-26 by date/home/away and reconstructed scores.
+- 2024-25: all 1,321 completed reference games matched source identities; 1,319 rows passed,
+  two had score disagreements, and five additional source rows lacked matching completed games
+  and contained invalid scores. All seven are quarantined with original records and reasons.
+- 2025-26: 554 rows passed through January 7, 2026. All 768 missing reference games occur after
+  that cutoff. No missing games were found inside the source date span in this reference.
+- Output canonical game and separate quote JSONL files, preserving unknown price provenance,
+  neutral-site information and namespaced team IDs. Existing output runs cannot be overwritten.
+- 18 local tests pass, including an end-to-end importer test and reference hash-tampering test.
+- Aggregate report: docs/reports/recent-validation.json. No raw datasets redistributed.
+
+## Next milestone: baseline research
+1. Establish permitted dataset use before integrating these third-party odds in a distributed product.
+2. Independently verify price samples and identify a source for the missing 2026 odds; do not
+   reconstruct historical prices from final results or fill gaps with invented values.
+3. Expand independent result validation to older training seasons. Resolve aliases explicitly.
+4. Freeze the research protocol and data inclusion manifest before tuning any model.
+5. Build chronological baseline models using verified past results. Unknown quote times prevent
+   executable betting backtests; retrospective probability comparisons remain a separate exercise.
 
 ## Research milestone
 - Pre-register time splits after establishing trustworthy coverage. Preserve the latest usable

@@ -52,6 +52,41 @@ python scripts/audit_recent.py data/raw/OddsData.sqlite > docs/reports/recent-nb
 - Before collecting either: inspect terms for storage/display, validate sample data and coverage,
   track quotas, retain source timestamps and use shared cached pulls.
 
+## Provenance inspection and independent results (2026-10-08)
+
+The pinned newer repository's `src/Process-Data/Get_Odds_Data.py` reads SBR through
+`sbrscrape`, selects a sportsbook (default `fanduel`), and saves prices and results.
+It does not save a bookmaker identifier, quote timestamp or opening/closing marker.
+The current default cannot prove which parameters produced older rows, so the importer
+leaves those fields null. No upstream code was copied into Oddities.
+
+An independent results cache is collected from ESPN's public team schedule endpoints:
+`https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{id}/schedule?season={year}&seasontype={type}`.
+Types 2, 3 and 5 cover regular season, playoffs and play-ins. Completed games are
+deduplicated by ESPN event ID; conflicting copies cause failure. Tipoff timestamps
+are converted to America/New_York dates for exact source matching. Neutral-site flags
+are retained. Team IDs are explicitly namespaced to ESPN, not presented as NBA IDs.
+
+Every cache response includes URL, retrieval timestamp and SHA-256 metadata. Coverage
+counts are relative to this collected reference, not a league completeness certification.
+The reference is used to check scores and identities only; historical prices remain
+independently unverified. No automated fetch job or data redistribution is enabled.
+
+### Reconciliation results
+
+See `reports/recent-validation.json` for source and reference manifest hashes.
+
+| Source table | Source rows | Matched completed games | Passed checks | Quarantined |
+|---|---:|---:|---:|---:|
+| 2024-25 | 1,326 | 1,321 | 1,319 | 7 |
+| odds_2025-26 | 554 | 554 | 554 | 0 |
+
+The seven quarantines comprise two disagreements in reconstructed final scores and five
+zero-score rows without a completed reference match on the same date. They are not repaired.
+No reference games are missing inside either source's date span. The 2025-26 odds table is
+missing 768 completed reference games after 2026-01-07. These counts are relative to the
+collected ESPN schedules. Passing checks is not an independent validation of the odds themselves.
+
 ## Research boundary
 
 Train on past games, evaluate on later games. Knowing a game's eventual closing odds is not evidence
